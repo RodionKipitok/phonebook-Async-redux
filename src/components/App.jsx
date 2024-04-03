@@ -1,16 +1,21 @@
-export const App = () => {
+import { PhonebookForm } from './Phonebook/Form/Form';
+import Filter from './Phonebook/Filter/Filter';
+import Contacts from './Phonebook/Contact/Contacts';
+import { useDispatch, useSelector } from 'react-redux';
+import { getIsLoading, getError } from '../redux/selector';
+
+function App() {
+  const dispatch = useDispatch();
+  const isLoading = useSelector(getIsLoading);
+  const error = useSelector(getError);
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
-    </div>
+    <>
+      <PhonebookForm />
+      <Filter />
+      {isLoading && !error && <b>Request in progress...</b>}
+      <Contacts />
+    </>
   );
-};
+}
+
+export default App;
