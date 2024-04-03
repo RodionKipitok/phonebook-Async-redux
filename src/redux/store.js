@@ -1,10 +1,10 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import { contactReducer } from './contactSlice';
-
-const rootReducer = combineReducers({
-  contacts: contactReducer,
-});
+import { filterReducer } from './filterSlice';
 
 export const store = configureStore({
-  reducer: rootReducer,
+  reducer: {
+    contacts: contactReducer, // Редюсер для керування станом контактів
+    filter: filterReducer, // Редюсер для керування станом фільтра
+  },
 });

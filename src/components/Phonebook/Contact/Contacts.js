@@ -7,12 +7,12 @@ export default function Contacts() {
   const dispatch = useDispatch();
 
   const contacts = useSelector(getContacts);
+  console.log(contacts);
   const filter = useSelector(getFilterValue);
-
+  console.log(filter);
   const filteredItems = contacts.filter(item => {
     return item.name.toLowerCase().includes(filter.toLowerCase());
   });
-
   return (
     <>
       <h2 className="titleContact">Contacts</h2>
