@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { customAlphabet } from 'nanoid';
 import { fetchContacts, addContact, deleteContact } from '../redux/operations';
 
 const initialState = { items: [], isLoading: false, error: null };
