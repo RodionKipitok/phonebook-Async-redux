@@ -1,6 +1,7 @@
 import '../Filter/filter.css';
 import { getFilterValue } from '../../../redux/selector';
 import { useDispatch, useSelector } from 'react-redux';
+import { changeFilter } from '../../../redux/filterSlice';
 
 export default function Filter() {
   const filterValue = useSelector(getFilterValue);
@@ -11,7 +12,7 @@ export default function Filter() {
       <p className="text">Find contacts by name</p>
       <input
         onChange={e => {
-          console.log(e.target.value);
+          dispatch(changeFilter(e.target.value));
         }}
         className="inputFilter"
         type="text"
