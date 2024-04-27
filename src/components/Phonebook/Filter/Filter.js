@@ -13,6 +13,8 @@ export default function Filter() {
       <input
         onChange={e => {
           dispatch(changeFilter(e.target.value));
+
+          dispatch(getFilterValue(e.target.value));
         }}
         className="inputFilter"
         type="text"
