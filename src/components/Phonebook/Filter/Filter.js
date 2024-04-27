@@ -11,7 +11,7 @@ export default function Filter() {
       <p className="text">Find contacts by name</p>
       <input
         onChange={e => {
-          console.log(e.target.value);
+          dispatch(getFilterValue(e.target.value))
         }}
         className="inputFilter"
         type="text"
